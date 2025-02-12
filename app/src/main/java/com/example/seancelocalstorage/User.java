@@ -1,7 +1,5 @@
 package com.example.seancelocalstorage;
 
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -10,13 +8,10 @@ public class User {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-
-    @ColumnInfo(name = "user_name")
     private String name;
-
-    @ColumnInfo(name = "user_email")
     private String email;
 
+    // Constructor, getters, and setters
     public User(String name, String email) {
         this.name = name;
         this.email = email;

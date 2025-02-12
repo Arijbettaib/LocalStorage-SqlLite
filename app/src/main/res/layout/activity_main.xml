@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical">
 
+    <!-- EditText pour le nom de l'utilisateur -->
     <EditText
         android:id="@+id/inputEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Entrer un texte"
+        android:hint="Entrer un nom"
         android:background="@android:drawable/editbox_background"
         android:padding="12dp"
         android:textSize="16sp"
         android:layout_marginBottom="12dp" />
 
+    <!-- EditText pour l'email de l'utilisateur -->
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter user email"
+        android:hint="Entrer l'email"
         android:background="@android:drawable/editbox_background"
         android:padding="12dp"
         android:textSize="16sp"
         android:layout_marginBottom="12dp" />
 
+    <!-- Boutons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,14 +50,16 @@
             android:padding="10dp" />
     </LinearLayout>
 
+    <!-- Affichage du texte sauvegardé -->
     <TextView
         android:id="@+id/outputTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:textSize="16sp"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black" />
 
+    <!-- RecyclerView pour afficher la liste des utilisateurs -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -63,11 +67,12 @@
         android:layout_marginTop="12dp"
         android:layout_weight="1"/>
 
+    <!-- Boutons supplémentaires -->
     <Button
         android:id="@+id/addUserButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ajouter user"
+        android:text="Ajouter un utilisateur"
         android:layout_marginTop="12dp"
         android:padding="12dp"/>
 
@@ -75,7 +80,7 @@
         android:id="@+id/getUsersButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get Users"
+        android:text="Obtenir les utilisateurs"
         android:layout_marginTop="8dp"
         android:padding="12dp"/>
 
@@ -83,7 +88,8 @@
         android:id="@+id/getUserByIdButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get User By ID"
+        android:text="Obtenir un utilisateur par ID"
         android:layout_marginTop="8dp"
         android:padding="12dp"/>
+
 </LinearLayout>

@@ -14,6 +14,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     private List<User> users;
 
+    // Constructeur
     public UserAdapter(List<User> users) {
         this.users = users;
     }
@@ -22,33 +23,37 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_2, parent, false);
+                .inflate(R.layout.user_item, parent, false); // Assurez-vous que user_item est le bon fichier XML
         return new UserViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User user = users.get(position);
-        holder.nameTextView.setText(user.getName());
-        holder.emailTextView.setText(user.getEmail());
+        holder.userIdTextView.setText("ID: " + user.getId());
+        holder.userNameTextView.setText("Name: " + user.getName());
+        holder.userEmailTextView.setText("Email: " + user.getEmail());
     }
 
     @Override
     public int getItemCount() {
-        return users.size();
+        return users != null ? users.size() : 0;
     }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView;
-        TextView emailTextView;
+        TextView userIdTextView;
+        TextView userNameTextView;
+        TextView userEmailTextView;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(android.R.id.text1);
-            emailTextView = itemView.findViewById(android.R.id.text2);
+            userIdTextView = itemView.findViewById(R.id.userIdTextView);
+            userNameTextView = itemView.findViewById(R.id.userNameTextView);
+            userEmailTextView = itemView.findViewById(R.id.userEmailTextView);
         }
     }
 
+    // Méthode pour mettre à jour les données
     public void updateData(List<User> newUsers) {
         users.clear();
         users.addAll(newUsers);
